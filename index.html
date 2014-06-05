@@ -1,0 +1,386 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Sample Application Prototype</title>
+<link rel="stylesheet" type="text/css" href="css/theme-one.css">
+<link rel="stylesheet" type="text/css" href="css/theme-tabs.css">
+<link rel="stylesheet" type="text/css" href="css/mouseyDialog.css">
+<link rel="stylesheet" type="text/css" href="css/menu.css" >
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/general.js"></script>
+<script type="text/javascript" src="js/tabcontent.js"></script>
+<script type="text/javascript" src="js/tabclicks.js"></script>
+<script type="text/javascript" src="js/animatedcollapse.js"></script>
+<script type="text/javascript" src="js/animatedadddiv.js"></script>
+<script type="text/javascript" src="js/m-dialog-initiate.js"></script>
+<script type="text/javascript" src="js/jquery_002.js"></script>
+</head>
+<body>
+<form name="frm">
+  <!-- ///////// Start Header ////////////-->
+  <div id="headerSection">
+    <div id="clientLogo"><img src="images/client_logo.gif"></div>
+    <div id="office"> </div>
+  </div>
+  <!--  //////////// End Header /////////////-->
+  <!--////// Start Menu/////////////-->
+  <div id="menu">
+    <ul class="menu">
+      <li><a href="#" class="parent"><span>Link 1</span></a>
+        <ul>
+          <li><a href="#" class="parent"><span>Sub Item 1</span></a>
+            <ul>
+              <li><a href="#" class="parent"><span>Sub Item 1.1</span></a>
+                <ul>
+                  <li><a href="#"><span>Sub Item 1.1.1</span></a></li>
+                  <li><a href="#"><span>Sub Item 1.1.2</span></a></li>
+                </ul>
+              </li>
+              <li><a href="#"><span>Sub Item 1.2</span></a></li>
+              <li><a href="#"><span>Sub Item 1.3</span></a></li>
+              <li><a href="#"><span>Sub Item 1.4</span></a></li>
+              <li><a href="#"><span>Sub Item 1.5</span></a></li>
+              <li><a href="#"><span>Sub Item 1.6</span></a></li>
+              <li><a href="#" class="parent"><span>Sub Item 1.7</span></a>
+                <ul>
+                  <li><a href="#"><span>Sub Item 1.7.1</span></a></li>
+                  <li><a href="#"><span>Sub Item 1.7.2</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#"><span>Sub Item 2</span></a></li>
+          <li><a href="#"><span>Sub Item 3</span></a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="parent"><span>Link 2</span></a>
+        <ul>
+          <li><a href="#" class="parent"><span>Sub Item 1</span></a>
+            <ul>
+              <li><a href="#"><span>Sub Item 1.1</span></a></li>
+              <li><a href="#"><span>Sub Item 1.2</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="parent"><span>Sub Item 2</span></a>
+            <ul>
+              <li><a href="#"><span>Sub Item 2.1</span></a></li>
+              <li><a href="#"><span>Sub Item 2.2</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#"><span>Sub Item 3</span></a></li>
+          <li><a href="#"><span>Sub Item 4</span></a></li>
+          <li><a href="#"><span>Sub Item 5</span></a></li>
+          <li><a href="#"><span>Sub Item 6</span></a></li>
+          <li><a href="#"><span>Sub Item 7</span></a></li>
+        </ul>
+      </li>
+      <li><a href="#"><span>Link 3</span></a></li>
+      <li class="last"><a href="#"><span>Link 4</span></a></li>
+    </ul>
+  </div>
+  <!--//////////// End Menu //////////-->
+  <!--/////////////// Start Left Panel ////////////////////-->
+  <div id="showPanel" title="Show Panel"><span></span></div>
+  <div id="leftPanel" style="border:1px solid #666666; border-top:none">
+    <div style="margin-left: 0px;" id="panel">
+      <div class="panelHdr">
+        <div class="width-75 floatLeft">Search</div>
+        <div id="hidePanel" title="Hide Panel" align="right"><a href="#">hide</a></div>
+      </div>
+      <table>
+        <tr>
+          <td>Keyword</td>
+          <td><input name="" value="" type="text" style="width:94%; background-color:#FFF;" /></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><div style="line-height: 30px;"><a class="button bold" style="padding: 2px;">&nbsp;Search&nbsp;</a> </div></td>
+        </tr>
+      </table>
+      <div class="panelHdr">Related Links</div>
+      <br>
+      <ul>
+        <li><a class="mainLink" href="#">Sub Link 1</a></li>
+        <li><a class="mainLink" href="#">Sub Link 2</a></li>
+        <li><a class="mainLink" href="#">Sub Link 3</a></li>
+        <li><a class="mainLink" href="#">Sub Link 4</a></li>
+        <li><a class="mainLink" onclick="javascript:TabClicks2();">Sub Link 5</a></li>
+      </ul>
+      <div class="panelHdr">More Links</div>
+      <br>
+      <ul>
+        <li><a class="mainLink" href="#">Sub Link 1</a></li>
+        <li><a class="mainLink" href="#">Sub Link 1</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--/////////  End leftPanel //////////-->
+  <!--/////////////// Start Main Panel ////////////////////-->
+  <div id="mainPanel">
+    <!--  ////////  Start tabsWrapper //////////-->
+    <div class="tabsWrapper">
+      <ul class="tabs">
+        <li class="active"><a href="#tab1" id="Divs1">Tab One</a></li>
+        <li><a href="#tab2" id="Divs2">Tab Two</a></li>
+        <li><a href="#tab3" id="Divs3">Tab Three</a></li>
+        <li><a href="#tab4" id="Divs4">Tab Four</a></li>
+      </ul>
+      <!-- /////// Start Tabs Content Display ////////////-->
+      <div class="tabContentDisplay">
+        <div id="tab1" class="tab_content none">
+          <div class="h2">Records
+            <div>Record Updated</div>
+          </div>
+          <table class="container-table width-100">
+            <tr>
+              <td class="column-width-20"><img src="images/dn_arrow.gif" alt=""></td>
+              <td align="left"><a class='messages button-small' href="messages.html">Delete</a></td>
+              <td width="50%" align="right">Search Results: 03</td>
+            </tr>
+          </table>
+          <table class="container-table width-100" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="headerRow-width-24"><input name="" value="" type="checkbox"></td>
+              <td class="headerRow-width-24">Edit</td>
+              <td class="headerRow-width-24">View</td>
+              <td class="headerRow">Item No.</td>
+              <td class="headerRow">Date</td>
+              <td class="headerRow">Item Name</td>
+              <td class="headerRow">Item Type</td>
+              <td class="headerRow">Inquiry No.</td>
+              <td class="headerRow">Sales Person</td>
+              <td class="headerRow">Status</td>
+            </tr>
+            <tr onMouseover="this.bgColor='#EEEEEE'"onMouseout="this.bgColor='#FFFFFF'">
+              <td class="column-width-24 tableRow-columnX"><input name="" value="" type="checkbox"></td>
+              <td class="column-width-24 tableRow-columnX"><a onclick="javascript:TabClicks2();"><img src="images/icon_edit.gif" title="Edit" width="16" height="16"></a></td>
+              <td class="column-width-24 tableRow-columnX"><a href="#M" class="js_mouseyDialog one"><img src="images/icon_view.gif" title="View" width="16" height="16" border="0"></a></td>
+              <td class="tableRow columnY">IT15</td>
+              <td class="tableRow columnX">14/09/2012</td>
+              <td class="tableRow columnY">Item Name 1</td>
+              <td class="tableRow columnX">Item Type One</td>
+              <td class="tableRow columnY">IQ29</td>
+              <td class="tableRow columnX">Sales Person One</td>
+              <td class="tableRow columnY">Open</td>
+            </tr>
+            <tr>
+              <td colspan="12"><!-- ============== Start View ================ -->
+                <div class="container-view" speed="300" groupname="quoteview" id="1">
+                  <table class="container-table width-100  margin-auto" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td colspan="2" class="bxHdr"><strong>Sub row item 1</strong></td>
+                      <td colspan="5" class="bxHdr">&nbsp;</td>
+                      <td colspan="2" class="bxHdr"><div class="arrowDn floatLeft"><a class='messages button-small' href="messages.html">Delete</a></div>
+                        <div class="cancel"><a href="javascript:animatedcollapse.hide('1')"><img src="images/cancel.png" border="0"></a></div></td>
+                    </tr>
+                    <tr>
+                      <td class="subhdr-small left">Item Name</td>
+                      <td class="subhdr-small left">Item Code</td>
+                      <td class="subhdr-small right">Rate</td>
+                      <td class="subhdr-small right">Qty.</td>
+                      <td class="subhdr-small right">Item Total</td>
+                      <td class="subhdr-small center">Tax</td>
+                      <td class="subhdr-small center">Edit</td>
+                      <td class="subhdr-small center" style="width: 18px;"><input name="checkbox3" value="checkbox" type="checkbox"></td>
+                      <td class="subhdr-small center">Details</td>
+                    </tr>
+                    <tr>
+                      <td class="tableRow left">Laptop 1</td>
+                      <td class="tableRow left">CP1131</td>
+                      <td class="tableRow right">40,000.00</td>
+                      <td class="tableRow right">5</td>
+                      <td class="tableRow right">2,00,000.00</td>
+                      <td class="tableRow center">ST</td>
+                      <td class="tableRow center"><a onclick="javascript:TabClicks3();"><img src="images/icon_edit.gif" width="16" height="16"></a></td>
+                      <td class="tableRow center"><input name="checkbox" value="checkbox" type="checkbox"></td>
+                      <td class="tableRow" align="center"><div class="techDetails"><a onclick="javascript:TabClicks4();"><img src="images/add.png" style="float: left;"></a> <a rel="toggle[TD1]" style="height: 16px; width: 16px; float: left; background: url(images/icon_view.gif) no-repeat; margin-left: 6px;"></a></div></td>
+                    </tr>
+                    <tr>
+                      <td colspan="9" align="left"><div class="child" speed="300" groupname="techdetail" id="TD1">
+                          <table class="width-100  margin-auto" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td><strong>Details - 1</strong></td>
+                              <td align="right"><div class="cancel"><a href="javascript:animatedcollapse.hide('TD1')"><img src="images/cancel.png" border="0"></a></div></td>
+                            </tr>
+                            <tr>
+                              <td colspan="2"><br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                              </td>
+                            </tr>
+                          </table>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td class="altTableRow left">Laptop 2</td>
+                      <td class="altTableRow left">CP1233</td>
+                      <td class="altTableRow right">44,000.00</td>
+                      <td class="altTableRow right">4</td>
+                      <td class="altTableRow right">1,76,000.00</td>
+                      <td class="altTableRow center">ST</td>
+                      <td class="altTableRow center"><a onclick="javascript:TabClicks3();"><img src="images/icon_edit.gif" width="16" height="16"></a></td>
+                      <td class="altTableRow center"><input name="checkbox2" value="checkbox" type="checkbox"></td>
+                      <td class="altTableRow" align="center"><div class="techDetails"> <a onclick="javascript:TabClicks4();"><img src="images/add.png" style="float: left;"></a> <a rel="toggle[TD2]" style="height: 16px; width: 16px; float: left; background: url(&quot;images/icon_view.gif&quot;) no-repeat scroll 0% 0% transparent; margin-left: 6px;"></a> </div></td>
+                    </tr>
+                    <tr>
+                      <td colspan="9" align="left"><div class="child" speed="300" groupname="techdetail" id="TD2">
+                          <table class="width-100  margin-auto" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td><strong>Details - 2</strong></td>
+                              <td align="right"><div class="cancel"><a href="javascript:animatedcollapse.hide('TD2')"><img src="images/cancel.png" border="0"></a></div></td>
+                            </tr>
+                            <tr>
+                              <td colspan="2"><br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                              </td>
+                            </tr>
+                          </table>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td colspan="7" class="bxHdr" align="left"><a class="button-small" onclick="javascript:TabClicks3();">Add New Item</a></td>
+                      <td colspan="2" class="bxHdr"><div class="arrowUp"><a class='messages button-small' href="messages.html">Delete</a></div></td>
+                    </tr>
+                  </table>
+                </div>
+                <!-- ======================== End view =================== --></td>
+            </tr>
+            <tr>
+              <td class="column-width-20 tableRow-columnX"><input name="" value="" type="checkbox"></td>
+              <td class="column-width-20 tableRow-columnX"><!--<img src="images/icon_edit.gif" title="Edit" width="16" height="16">--></td>
+              <!-- <td class="column-width-20 tableRow-columnX"><img src="images/icon_print.gif" width="16" height="16"></td>-->
+              <td class="column-width-20 tableRow-columnX"><!--<a href="#M" class="js_mouseyDialog two"><img src="images/icon_view.gif" width="16" height="16" border="0"></a>--></td>
+              <!-- <td class="column-width-20 tableRow-columnX"><a href="#H" class="js_mouseyDialog one"><img src="images/icon_view.gif" width="16" height="16" border="0" title="View"></a></td>-->
+              <td class="tableRow columnY"></td>
+              <td class="tableRow columnX"></td>
+              <td class="tableRow columnY"></td>
+              <td class="tableRow columnX"></td>
+              <td class="tableRow columnY"></td>
+              <td class="tableRow columnX"></td>
+              <td class="tableRow columnY"></td>
+            </tr>
+            <tr>
+              <td class="column-width-20 tableRow-columnX"><input name="" value="" type="checkbox"></td>
+              <td class="column-width-20 tableRow-columnX"><!--<img src="images/icon_edit.gif" title="Edit" width="16" height="16">--></td>
+              <!--<td class="column-width-20 tableRow-columnX"><img src="images/icon_print.gif" width="16" height="16"></td>-->
+              <td class="column-width-20 tableRow-columnX"><!--<a href="#M" class="js_mouseyDialog two"><img src="images/icon_view.gif" width="16" height="16" border="0"></a>--></td>
+              <!--<td class="column-width-20 tableRow-columnX"><a href="#H" class="js_mouseyDialog one"><img src="images/icon_view.gif" width="16" height="16" border="0" title="View"></a></td>-->
+              <td class="tableRow columnY"></td>
+              <td class="tableRow columnX"></td>
+              <td class="tableRow columnY"></td>
+              <td class="tableRow columnX"></td>
+              <td class="tableRow columnY"></td>
+              <td class="tableRow columnX"></td>
+              <td class="tableRow columnY"></td>
+            </tr>
+          </table>
+          <table class="container-table width-100">
+            <tr>
+              <td class="column-width-20"><img src="images/up_arrow.gif" alt=""></td>
+              <td><a class='messages button-small' href="messages.html">Delete</a></td>
+              <td width="50%" align="right">1.2.3 Next</td>
+            </tr>
+          </table>
+          <br>
+        </div>
+        <div id="tab2" class="tab_content none">
+          <div class="h2">Edit
+            <div>Record Updated</div>
+          </div>
+          <br>
+          <table class="container-table width-100 borderTop" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="columnX" valign="top" width="16%">Item No.</td>
+              <td class="columnY" valign="top" width="34%"><input name="" class="textArea text-gray-light" value="IT15" type="text"></td>
+              <td class="columnX" valign="top" width="16%">Date</td>
+              <td class="columnY" valign="top" width="34%"><input name="" class="textArea text-gray-light" value="14/09/2012" size="16" type="text"></td>
+            </tr>
+          </table>
+          <br>
+          <div align="center">
+            <button>Save</button>
+            <button>Add New</button>
+            <button>Clear</button>
+          </div>
+          <br>
+        </div>
+        <div id="tab3" class="tab_content none">
+          <div class="h2">Add / Edit Item
+            <div>Record Updated</div>
+          </div>
+          <br>
+          <table class="container-table width-100 borderTop" cellpadding="4" cellspacing="0">
+            <tr>
+              <td class="columnX" valign="top" width="16%">Item Category </td>
+              <td class="columnY" valign="top" width="34%"><input name="textfield8222" class="textArea text-gray-light" type="text"></td>
+              <td class="columnX" valign="top" width="16%">&nbsp;</td>
+              <td class="columnY" valign="top" width="34%"><input name="textfield2" class="textArea text-gray-light" type="text"></td>
+            </tr>
+          </table>
+          <br>
+          <div align="center">
+            <button>Save</button>
+            <button>Add New</button>
+            <button>Clear</button>
+          </div>
+          <br>
+        </div>
+        <div id="tab4" class="tab_content none">
+          <div class="h2">Details
+            <div>Record Updated</div>
+          </div>
+          <br>
+          <table class="container-table width-100 borderTop" cellpadding="4" cellspacing="0">
+            <tr>
+              <td class="columnX" valign="top" width="16%">Details </td>
+              <td class="columnY" valign="top" width="34%"><input name="textfield8222" class="textArea text-gray-light" type="text"></td>
+              <td class="columnX" valign="top" width="16%">&nbsp;</td>
+              <td class="columnY" valign="top" width="34%"><input name="textfield2" class="textArea text-gray-light" type="text"></td>
+            </tr>
+          </table>
+          <br>
+          <div align="center">
+            <button>Save</button>
+            <button>Add New</button>
+            <button>Clear</button>
+          </div>
+          <br>
+        </div>
+      </div>
+      <!-- /////// End Tabs Content Display ////////////-->
+      <br clear="all">
+      <!-- /////  Dialogue Boxes ////////////-->
+      <!--///////////More Row Actions//////////////-->
+      <!--/////////////////////More Actions//////////////////-->
+      <div class="mouseyDialog" style="display: none; position: absolute; z-index: 100;" id="M">
+        <table width="180" border="0" cellpadding="0" cellspacing="2">
+          <tbody>
+            <tr>
+              <td><a class="smallLink" href="#" rel="toggle[1]" style="display: block; height: 16px; width: auto;" title="View">View Sub row item 1</a></td>
+              <!--<td style="background: url(images/add.png) no-repeat scroll 0% 0% transparent; width: 20px; height: 16px;"><a style="display: block; height: 16px; width: 16px; cursor: pointer;" title="Add" onclick="javascript:TabClicks2();"></a></td>-->
+            </tr>
+            <tr>
+              <td><!--<a class="smallLink" href="#" rel="toggle[2]" style="display: block; height: 16px; width: auto; cursor: pointer;">Sub row item 2</a>--></td>
+              <!-- <td style="background: url(images/add.png) no-repeat scroll 0% 0% transparent; width: 16px; height: 16px;"><a style="display: block; height: 16px; width: 16px;" onclick="javascript:TabClicks4();"></a></td>-->
+            </tr>
+            <tr>
+              <td><!--<a class="smallLink" href="#" rel="toggle[3]" style="display: block; height: 16px; width: auto; cursor: pointer;">Sub row item 3</a>--></td>
+              <!--<td style="background: url(images/add.png) no-repeat scroll 0% 0% transparent; width: 16px; height: 16px;"><a style="display: block; height: 16px; width: 16px;" onclick="javascript:TabClicks5();"></a></td>-->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--/////// End tabsWrapper /////////-->
+  </div>
+  <!--/////// End MainPanel /////////-->
+  <br clear="all">
+</form>
+</body>
+</html>
